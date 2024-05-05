@@ -1,9 +1,8 @@
 // import 'package:badges/badges.dart';
 import 'package:badges/badges.dart' as badges;
+import 'package:book_read_app/pages/book_detail_page.dart';
 import 'package:book_read_app/theme/colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:line_icons/line_icons.dart';
 
@@ -207,120 +206,144 @@ class _HomePageState extends State<HomePage> {
           scrollDirection: Axis.horizontal,
           child: Row(
             children: List.generate(specialForYouJson.length, (index) {
-              return Padding(
-                padding: const EdgeInsets.only(right: 15),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Stack(
-                      children: [
-                        Container(
-                          width: 120,
-                          height: 160,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
-                              color: primary,
-                              image: DecorationImage(
-                                  image: NetworkImage(
-                                      specialForYouJson[index]['img']),
-                                  fit: BoxFit.cover)),
-                        ),
-                        Container(
-                          width: 120,
-                          height: 160,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                            color: Colors.black.withOpacity(0.2),
-                          ),
-                        ),
-                        Positioned(
-                            right: 10,
-                            top: 10,
-                            child: Container(
-                              width: 30,
-                              height: 30,
-                              decoration: const BoxDecoration(
-                                  color: Colors.white, shape: BoxShape.circle),
-                              child: Icon(
-                                  specialForYouJson[index]['favourite']
-                                      ? LineIcons.heartAlt
-                                      : LineIcons.heart,
-                                  size: 20,
-                                  color: danger),
-                            )),
-                        Positioned(
-                            top: 100,
-                            child: Container(
-                              width: 65,
-                              height: 25,
-                              decoration: const BoxDecoration(
-                                  color: primary,
-                                  borderRadius: BorderRadius.only(
-                                      bottomRight: Radius.circular(12),
-                                      topRight: Radius.circular(12))),
-                              child: Center(
-                                child: Text(
-                                  "\$ ${specialForYouJson[index]['price']}",
-                                  style: const TextStyle(
-                                      fontSize: 14,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w600),
-                                ),
-                              ),
-                            ))
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    SizedBox(
-                      width: 120,
-                      child: Text(
-                        specialForYouJson[index]['title'],
-                        maxLines: 1,
-                        style: const TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.w600),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    SizedBox(
-                      width: 120,
-                      child: Text(
-                        specialForYouJson[index]['sub_title'],
-                        maxLines: 1,
-                        style: TextStyle(
-                            fontSize: 13, color: Colors.black.withOpacity(0.4)),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 6,
-                    ),
-                    SizedBox(
-                      width: 120,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              return GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (_) => BookDetailPage(
+                              img: specialForYouJson[index]['img'],
+                              title: specialForYouJson[index]['title'],
+                              subTitle: specialForYouJson[index]['sub_title'],
+                              price: specialForYouJson[index]['price'].toString(),
+                              page: specialForYouJson[index]['page'],
+                              authorName: specialForYouJson[index]
+                                  ['author_name'],
+                              rate: specialForYouJson[index]['rate'].toString())));
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 15),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Stack(
                         children: [
-                          RatingBar.builder(
-                            ignoreGestures: true,
-                            initialRating: specialForYouJson[index]['rate'],
-                            maxRating: 1,
-                            direction: Axis.horizontal,
-                            allowHalfRating: true,
-                            itemCount: 5,
-                            itemSize: 14,
-                            itemPadding: const EdgeInsets.only(right: 2),
-                            itemBuilder: (context,_)=>const Icon(Icons.star,color: danger,),
-                            onRatingUpdate: (rating){
-
-                            },
+                          Container(
+                            width: 120,
+                            height: 160,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(12),
+                                color: primary,
+                                image: DecorationImage(
+                                    image: NetworkImage(
+                                        specialForYouJson[index]['img']),
+                                    fit: BoxFit.cover)),
                           ),
-                          Text(specialForYouJson[index]['rate'].toString(),style: TextStyle(fontSize: 13,color: danger,fontWeight: FontWeight.w500),)
+                          Container(
+                            width: 120,
+                            height: 160,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
+                              color: Colors.black.withOpacity(0.2),
+                            ),
+                          ),
+                          Positioned(
+                              right: 10,
+                              top: 10,
+                              child: Container(
+                                width: 30,
+                                height: 30,
+                                decoration: const BoxDecoration(
+                                    color: Colors.white,
+                                    shape: BoxShape.circle),
+                                child: Icon(
+                                    specialForYouJson[index]['favourite']
+                                        ? LineIcons.heartAlt
+                                        : LineIcons.heart,
+                                    size: 20,
+                                    color: danger),
+                              )),
+                          Positioned(
+                              top: 100,
+                              child: Container(
+                                width: 65,
+                                height: 25,
+                                decoration: const BoxDecoration(
+                                    color: primary,
+                                    borderRadius: BorderRadius.only(
+                                        bottomRight: Radius.circular(12),
+                                        topRight: Radius.circular(12))),
+                                child: Center(
+                                  child: Text(
+                                    "\$ ${specialForYouJson[index]['price']}",
+                                    style: const TextStyle(
+                                        fontSize: 14,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                ),
+                              ))
                         ],
-                      )
-                    )
-                  ],
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      SizedBox(
+                        width: 120,
+                        child: Text(
+                          specialForYouJson[index]['title'],
+                          maxLines: 1,
+                          style: const TextStyle(
+                              fontSize: 15, fontWeight: FontWeight.w600),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      SizedBox(
+                        width: 120,
+                        child: Text(
+                          specialForYouJson[index]['sub_title'],
+                          maxLines: 1,
+                          style: TextStyle(
+                              fontSize: 13,
+                              color: Colors.black.withOpacity(0.4)),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 6,
+                      ),
+                      SizedBox(
+                          width: 120,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              RatingBar.builder(
+                                ignoreGestures: true,
+                                initialRating: specialForYouJson[index]['rate'],
+                                maxRating: 1,
+                                direction: Axis.horizontal,
+                                allowHalfRating: true,
+                                itemCount: 5,
+                                itemSize: 14,
+                                itemPadding: const EdgeInsets.only(right: 2),
+                                itemBuilder: (context, _) => const Icon(
+                                  Icons.star,
+                                  color: danger,
+                                ),
+                                onRatingUpdate: (rating) {},
+                              ),
+                              Text(
+                                specialForYouJson[index]['rate'].toString(),
+                                style: const TextStyle(
+                                    fontSize: 13,
+                                    color: danger,
+                                    fontWeight: FontWeight.w500),
+                              )
+                            ],
+                          ))
+                    ],
+                  ),
                 ),
               );
             }),

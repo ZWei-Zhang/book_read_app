@@ -122,7 +122,7 @@ List reviewsPeople = [
 
 const List similarBooksJson = [
   {
-    "img" : "https://covers.openlibrary.org/b/id/12860069-L.jpg",
+    "img" : "https://wfqqreader-1252317822.image.myqcloud.com/cover/793/37095793/t6_37095793.jpg",
     "price" : "2.50",
     "title" : "I'm Glad My Mom Died",
     "sub_title" : "I'm Glad My Mom Died",
@@ -132,7 +132,7 @@ const List similarBooksJson = [
     "page" : "200" 
   },
   {
-    "img" : "https://covers.openlibrary.org/b/id/12842027-L.jpg",
+    "img" : "https://cdn.weread.qq.com/weread/cover/78/3300018278/t6_3300018278.jpg",
     "price" : "5.99",
     "title" : "The Love Hypothesis",
     "sub_title" : "The Love Hypothesis",
@@ -142,7 +142,7 @@ const List similarBooksJson = [
     "page" : "150" 
   },
   {
-    "img" : "https://covers.openlibrary.org/b/id/402210-L.jpg",
+    "img" : "https://cdn.weread.qq.com/weread/cover/58/cpplatform_kh3smngft9p3rgyvekfixw/t6_cpplatform_kh3smngft9p3rgyvekfixw1714457907.jpg",
     "price" : "2.20",
     "title" : "The 48 Laws of Power",
     "sub_title" : "The 48 Laws of Power",
