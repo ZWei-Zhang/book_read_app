@@ -334,7 +334,7 @@ class _HomePageState extends State<HomePage> {
                                 onRatingUpdate: (rating) {},
                               ),
                               Text(
-                                specialForYouJson[index]['rate'].toString(),
+                                '(${specialForYouJson[index]['rate'].toString()})',
                                 style: const TextStyle(
                                     fontSize: 13,
                                     color: danger,

@@ -1,5 +1,7 @@
 import 'package:book_read_app/json/root_app_json.dart';
 import 'package:book_read_app/pages/home_page.dart';
+import 'package:book_read_app/pages/my_book_page.dart';
+import 'package:book_read_app/pages/store_page.dart';
 import 'package:book_read_app/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
@@ -26,18 +28,8 @@ class _RootAppState extends State<RootApp> {
       index: pageIndex,
       children: const [
         HomePage(),
-        Center(
-          child: Text(
-            "My Book Page",
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          ),
-        ),
-        Center(
-          child: Text(
-            "Store Page",
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          ),
-        ),
+        MyBookPage(),
+        StorePage(),
         Center(
           child: Text(
             "Favourite Page",

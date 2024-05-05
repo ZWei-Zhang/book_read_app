@@ -1,7 +1,7 @@
 
 const List continueReadingJson = [
   {
-    "img" : "https://covers.openlibrary.org/b/id/10601397-L.jpg",
+    "img" : "https://wfqqreader-1252317822.image.myqcloud.com/cover/152/35326152/t6_35326152.jpg",
     "price" : "3.45",
     "title" : "Danny the Champion of the World",
     "sub_title" : "Danny the Champion of the World",
@@ -12,7 +12,7 @@ const List continueReadingJson = [
     "percentage": 65.0
   },
   {
-    "img" : "https://covers.openlibrary.org/w/id/149650-M.jpg",
+    "img" : "https://cdn.weread.qq.com/weread/cover/94/YueWen_40400963/t6_YueWen_40400963.jpg",
     "price" : "5.99",
     "title" : "Cell",
     "sub_title" : "A Novel",
@@ -23,7 +23,7 @@ const List continueReadingJson = [
     "percentage": 30.0
   },
   {
-   "img" : "https://covers.openlibrary.org/b/id/7081826-L.jpg",
+   "img" : "https://cdn.weread.qq.com/weread/cover/8/YueWen_32169889/t6_YueWen_32169889.jpg",
     "price" : "5.99",
     "title" : "Chemistry",
     "sub_title" : "4th ed.",
@@ -37,7 +37,7 @@ const List continueReadingJson = [
 
 const List unReadJson = [
   {
-    "img" : "https://covers.openlibrary.org/b/id/12860069-L.jpg",
+    "img" : "https://cdn.weread.qq.com/weread/cover/43/cpplatform_f3vxcjkt7ph8jrpy4jugwr/t6_cpplatform_f3vxcjkt7ph8jrpy4jugwr1678775114.jpg",
     "price" : "2.50",
     "title" : "I'm Glad My Mom Died",
     "sub_title" : "I'm Glad My Mom Died",
@@ -47,7 +47,7 @@ const List unReadJson = [
     "page" : "200" 
   },
   {
-    "img" : "https://covers.openlibrary.org/b/id/12842027-L.jpg",
+    "img" : "https://wfqqreader-1252317822.image.myqcloud.com/cover/123/27563123/t6_27563123.jpg",
     "price" : "5.99",
     "title" : "The Love Hypothesis",
     "sub_title" : "The Love Hypothesis",
@@ -57,7 +57,7 @@ const List unReadJson = [
     "page" : "150" 
   },
   {
-    "img" : "https://covers.openlibrary.org/b/id/402210-L.jpg",
+    "img" : "https://cdn.weread.qq.com/weread/cover/75/YueWen_35458983/t6_YueWen_35458983.jpg",
     "price" : "2.20",
     "title" : "The 48 Laws of Power",
     "sub_title" : "The 48 Laws of Power",
