@@ -1,4 +1,5 @@
 import 'package:blurrycontainer/blurrycontainer.dart';
+import 'package:book_read_app/pages/play_now_page.dart';
 import 'package:book_read_app/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -87,7 +88,15 @@ class _BookDetailPage extends State<BookDetailPage> {
                                 color: Colors.white,
                               ),
                               IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (_) => PlayNowPage(
+                                              img: widget.img,
+                                              title: widget.title,
+                                              subTitle: widget.subTitle)));
+                                },
                                 icon: const Icon(Icons.headphones),
                                 color: Colors.white,
                               ),
@@ -781,8 +790,16 @@ class _BookDetailPage extends State<BookDetailPage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Icon(Icons.light_mode,size: 18,color: Colors.black.withOpacity(0.6),),
-                          Icon(Icons.light_mode,size: 28,color: Colors.black.withOpacity(0.6),)
+                          Icon(
+                            Icons.light_mode,
+                            size: 18,
+                            color: Colors.black.withOpacity(0.6),
+                          ),
+                          Icon(
+                            Icons.light_mode,
+                            size: 28,
+                            color: Colors.black.withOpacity(0.6),
+                          )
                         ],
                       ),
                     ],
