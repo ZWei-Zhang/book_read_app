@@ -1,17 +1,20 @@
 import 'package:book_read_app/theme/colors.dart';
 import 'package:flutter/material.dart';
 
+const String profileUrl = 'https://c-ssl.dtstatic.com/uploads/blog/202304/15/20230415081411_f2e46.thumb.400_0.jpg';
+const String readyToday = 'https://images.unsplash.com/photo-1544716278-e513176f20b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGJvb2t8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60';
+
 const List tags = [
   {
-    "label" : "Education",
+    "label" : "教育",
     "color" : Color(0xFF7871aa)
   },
   {
-    "label" : "Self-development",
+    "label" : "自我发展",
     "color" : Color(0xFF7fb069)
   },
   {
-    "label" : "Psychology",
+    "label" : "心理学",
     "color" : Color(0xFFcc7e85)
   }
 
@@ -51,51 +54,51 @@ const List storeTags = [
 
 const List specialForYouJson = [
   {
-    "img" : "https://covers.openlibrary.org/b/id/12726999-L.jpg",
+    "img" : "https://cdn.weread.qq.com/weread/cover/6/cpplatform_3flv23gsk5i1wyfewbxcmq/t6_cpplatform_3flv23gsk5i1wyfewbxcmq1714035435.jpg",
     "price" : "5.00",
-    "title" : "Shatter me",
+    "title" : "卓越基因",
     "sub_title" : "1st ed.",
-    "author_name" : "Tahereh Mafi",
+    "author_name" : "[美]吉姆·柯林斯 比尔·拉齐尔",
     "rate" : 4.31,
     "favourite" : true,
     "page" : "87" 
   },
   {
-    "img" : "https://covers.openlibrary.org/b/id/10362743-L.jpg",
+    "img" : "https://cdn.weread.qq.com/weread/cover/44/cpplatform_tweycmwdgv5kegl9rgght1/t6_cpplatform_tweycmwdgv5kegl9rgght11687684560.jpg",
     "price" : "8.99",
-    "title" : "A Court of Thorns and Roses",
+    "title" : "芒格之道",
     "sub_title" : "A Court of Thorns and Roses",
-    "author_name" : "Sarah J. Maas",
+    "author_name" : "查理·芒格",
     "rate" : 4.15,
     "favourite" : false,
     "page" : "263" 
   },
   {
-    "img" : "https://covers.openlibrary.org/b/id/8743774-L.jpg",
+    "img" : "https://cdn.weread.qq.com/weread/cover/75/YueWen_41218663/t6_YueWen_41218663.jpg",
     "price" : "3.40",
-    "title" : "Where the crawdads sing",
+    "title" : "苏东坡全传",
     "sub_title" : "First large print edition.",
-    "author_name" : "Delia Owens",
+    "author_name" : "秦晓",
     "rate" : 3.20,
     "favourite" : false,
     "page" : "60" 
   },
   {
-    "img" : "https://covers.openlibrary.org/b/id/10696993-L.jpg",
+    "img" : "https://cdn.weread.qq.com/weread/cover/94/3300011794/t6_3300011794.jpg",
     "price" : "5.99",
-    "title" : "The Seven Husbands of Evelyn Hugo",
+    "title" : "请画一下爱",
     "sub_title" : "A Novel",
-    "author_name" : "Taylor Jenkins Reid",
+    "author_name" : "ShuRan 舒然",
     "rate" : 4.12,
     "favourite" : true,
     "page" : "872" 
   },
   {
-    "img" : "https://covers.openlibrary.org/b/id/12567115-L.jpg",
+    "img" : "https://cdn.weread.qq.com/weread/cover/95/cpplatform_sdmajvezrwad4cgirmsspn/t6_cpplatform_sdmajvezrwad4cgirmsspn1714473374.jpg",
     "price" : "2.99",
-    "title" : "Reminders of Him",
+    "title" : "第七重解答",
     "sub_title" : "A Novel",
-    "author_name" : "Colleen Hoover",
+    "author_name" : "[法]保罗·霍尔顿",
     "rate" : 2.00,
     "favourite" : false,
     "page" : "76" 

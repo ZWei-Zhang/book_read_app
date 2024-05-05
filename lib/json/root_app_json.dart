@@ -6,18 +6,18 @@ import 'package:line_icons/line_icons.dart';
 const List rootAppJson = [
   {
     "icon" : LineIcons.home,
-    "text" : "Home",
+    "text" : "首页",
   },
   {
     "icon" : LineIcons.book,
-    "text" : "My Books",
+    "text" : "书架",
   },
   {
     "icon" : LineIcons.shoppingBag,
-    "text" : "Store",
+    "text" : "商店",
   },
   {
     "icon" : LineIcons.heart,
-    "text" : "Favourite",
+    "text" : "收藏",
   }
 ];
