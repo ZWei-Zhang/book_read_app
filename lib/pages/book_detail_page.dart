@@ -3,6 +3,7 @@ import 'package:book_read_app/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 import '../json/home_json.dart';
 
@@ -91,7 +92,9 @@ class _BookDetailPage extends State<BookDetailPage> {
                                 color: Colors.white,
                               ),
                               IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  getBottomSheetSetting();
+                                },
                                 icon: const Icon(Icons.settings),
                                 color: Colors.white,
                               )
@@ -411,6 +414,7 @@ class _BookDetailPage extends State<BookDetailPage> {
       ],
     );
   }
+
   Widget getFourthSection() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -450,11 +454,13 @@ class _BookDetailPage extends State<BookDetailPage> {
                               img: similarBooksJson[index]['img'],
                               title: similarBooksJson[index]['title'],
                               subTitle: similarBooksJson[index]['sub_title'],
-                              price: similarBooksJson[index]['price'].toString(),
+                              price:
+                                  similarBooksJson[index]['price'].toString(),
                               page: similarBooksJson[index]['page'],
                               authorName: similarBooksJson[index]
-                              ['author_name'],
-                              rate: similarBooksJson[index]['rate'].toString())));
+                                  ['author_name'],
+                              rate:
+                                  similarBooksJson[index]['rate'].toString())));
                 },
                 child: Padding(
                   padding: const EdgeInsets.only(right: 15),
@@ -586,5 +592,203 @@ class _BookDetailPage extends State<BookDetailPage> {
         )
       ],
     );
+  }
+
+  getBottomSheetSetting() {
+    List themes = [
+      const Color(0xFFFFFFFF),
+      const Color(0xFF000000),
+      const Color(0xFFF0CEA0)
+    ];
+    showMaterialModalBottomSheet(
+        context: context,
+        builder: (_) => SingleChildScrollView(
+              controller: ModalScrollController.of(context),
+              child: Container(
+                width: double.infinity,
+                height: 250,
+                decoration: BoxDecoration(color: primary.withOpacity(0.15)),
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 25, horizontal: 15),
+                  child: Column(
+                    children: [
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: List.generate(themes.length, (index) {
+                                if (index == 0) {
+                                  return Padding(
+                                      padding: const EdgeInsets.only(right: 12),
+                                      child: Container(
+                                        width: 40,
+                                        height: 40,
+                                        decoration: BoxDecoration(
+                                            color: themes[index],
+                                            shape: BoxShape.circle,
+                                            border: Border.all(
+                                                color: Colors.black
+                                                    .withOpacity(0.7),
+                                                width: 0.5)),
+                                      ));
+                                }
+                                return Padding(
+                                    padding: const EdgeInsets.only(right: 12),
+                                    child: Container(
+                                      width: 30,
+                                      height: 30,
+                                      decoration: BoxDecoration(
+                                          color: themes[index],
+                                          shape: BoxShape.circle),
+                                    ));
+                              }),
+                            ),
+                            Row(
+                              children: [
+                                Container(
+                                  width: 40,
+                                  height: 40,
+                                  decoration: const BoxDecoration(
+                                      color: primary, shape: BoxShape.circle),
+                                  child: const Center(
+                                    child: Text(
+                                      'TT',
+                                      style: TextStyle(
+                                          fontSize: 17,
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 12,
+                                ),
+                                Container(
+                                  width: 40,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                      border: Border.all(color: primary),
+                                      shape: BoxShape.circle),
+                                  child: const Center(
+                                    child: Text(
+                                      'Tt',
+                                      style: TextStyle(
+                                          fontSize: 17,
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            )
+                          ]),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      Stack(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 4),
+                            child: Container(
+                              width: double.infinity,
+                              height: 4,
+                              decoration: BoxDecoration(
+                                  color: Colors.black.withOpacity(0.1),
+                                  borderRadius: BorderRadius.circular((5))),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 4),
+                            child: Container(
+                              width: 150,
+                              height: 4,
+                              decoration: BoxDecoration(
+                                  color: primary,
+                                  borderRadius: BorderRadius.circular((5))),
+                            ),
+                          ),
+                          Padding(
+                              padding: const EdgeInsets.only(left: 145),
+                              child: Container(
+                                width: 12,
+                                height: 12,
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: primary,
+                                ),
+                              ))
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Aa',
+                            style: TextStyle(
+                                fontSize: 13,
+                                color: Colors.black.withOpacity(0.8)),
+                          ),
+                          Text(
+                            'Aa',
+                            style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.black.withOpacity(0.8)),
+                          )
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      Stack(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 4),
+                            child: Container(
+                              width: double.infinity,
+                              height: 4,
+                              decoration: BoxDecoration(
+                                  color: Colors.black.withOpacity(0.1),
+                                  borderRadius: BorderRadius.circular((5))),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 4),
+                            child: Container(
+                              width: 180,
+                              height: 4,
+                              decoration: BoxDecoration(
+                                  color: primary,
+                                  borderRadius: BorderRadius.circular((5))),
+                            ),
+                          ),
+                          Padding(
+                              padding: const EdgeInsets.only(left: 175),
+                              child: Container(
+                                width: 12,
+                                height: 12,
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: primary,
+                                ),
+                              ))
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Icon(Icons.light_mode,size: 18,color: Colors.black.withOpacity(0.6),),
+                          Icon(Icons.light_mode,size: 28,color: Colors.black.withOpacity(0.6),)
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ));
   }
 }
